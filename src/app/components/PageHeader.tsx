@@ -6,7 +6,7 @@ interface Props {
 
 const PageHeader = ({ text }: Props) => {
     return (
-        <h1 className='text-5x1 font-extrabold dark:text-black'>
+        <h1 className='text-5xl font-extrabold dark:text-black text-center'>
             {text}
         </h1>
     )

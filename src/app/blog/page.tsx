@@ -3,8 +3,9 @@ import React from 'react'
 import PageHeader from '../components/PageHeader';
 import PageCardImage from '../components/PageCardImage';
 import { Post } from '@/interfaces/post';
+import PagePagination from '../components/PagePagination';
 
-const getData = async (page = 1, pageSize = 2) => {
+const getData = async (page = 1, pageSize = 3) => {
   const path = '/posts';
   const urlParamsObject = {
     populate: '*',
@@ -25,21 +26,36 @@ const getData = async (page = 1, pageSize = 2) => {
     pagination: meta.pagination
   }
 }
-const Blog = async () => {
 
-  const { data } = await getData()
+interface Props {
+  searchParams: {
+    page?: string
+  } 
+}
+const Blog = async ({ searchParams }: Props) => {
+  // console.log(searchParams)
+  const {page} = searchParams
+  let pageNumber = page ? parseInt(page) : 1
+
+  if (isNaN(pageNumber) || pageNumber < 1) {
+    pageNumber = 1
+  }
+
+  const { data, pagination } = await getData(pageNumber)
 
 
 
   return (
-    <div>
+    <div className='space-y-8'>
       <PageHeader text='Blogs' />
+
+      <PagePagination pagination={pagination} />
 
       {/* <pre>
         {JSON.stringify(data, null, 2)}
       </pre> */}
 
-      <div className="grig gap-4">
+      <div className="grid gap-4 justify-center">
         {data.map((post: Post) =>
           <PageCardImage key={post.id} post={post} />
         )}
