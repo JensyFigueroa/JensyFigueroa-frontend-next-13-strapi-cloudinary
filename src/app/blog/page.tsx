@@ -33,6 +33,7 @@ interface Props {
   } 
 }
 const Blog = async ({ searchParams }: Props) => {
+  
   // console.log(searchParams)
   const {page} = searchParams
   let pageNumber = page ? parseInt(page) : 1
