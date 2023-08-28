@@ -37,6 +37,7 @@ const Blog = async ({ searchParams }: Props) => {
   const {page} = searchParams
   let pageNumber = page ? parseInt(page) : 1
 
+  // se valida que lo que pase el usuario por query no sean letras o simbolos
   if (isNaN(pageNumber) || pageNumber < 1) {
     pageNumber = 1
   }
