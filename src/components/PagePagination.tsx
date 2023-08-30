@@ -36,7 +36,6 @@ const PagePagination = ({ pagination }: Props) => {
           ))}
 
 
-
           <li>
             <Link href={page === pageCount ? `/blog?page=${page}` : `/blog?page=${page + 1}`} className={`${next} ${page === pageCount ? 'opacity-50 pointer-events-none' : ''}`}>Next</Link>
           </li>

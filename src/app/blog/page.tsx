@@ -1,9 +1,9 @@
 import { fetchApi } from '@/helpers/fecth-api'
 import React from 'react'
-import PageHeader from '../components/PageHeader';
-import PageCardImage from '../components/PageCardImage';
+import PageHeader from '../../components/PageHeader';
+import PageCardImage from '../../components/PageCardImage';
 import { Post } from '@/interfaces/post';
-import PagePagination from '../components/PagePagination';
+import PagePagination from '../../components/PagePagination';
 
 const getData = async (page = 1, pageSize = 3) => {
   const path = '/posts';

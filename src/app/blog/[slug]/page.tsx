@@ -1,4 +1,4 @@
-import PageHeader from '@/app/components/PageHeader';
+import PageHeader from '@/components/PageHeader';
 import { getStrapiURL } from '@/helpers/api-helper';
 import { fetchApi } from '@/helpers/fecth-api';
 import { formatDate } from '@/helpers/format-date-helper';

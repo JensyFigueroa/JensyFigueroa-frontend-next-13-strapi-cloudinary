@@ -1,6 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from '../components/Header'
+import CartProvider from '@/context/CartContext'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <main className='container mx-auto max-w-2xl'>
-          {children}
+          <CartProvider>
+            <Header />
+            {children}
+          </CartProvider>
         </main>
       </body>
     </html>
