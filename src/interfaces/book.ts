@@ -6,7 +6,7 @@ export interface Book {
 interface Attributes2 {
   title: string;
   slug: string;
-  price: string;
+  price: number;
   stock: number;
   description: string;
   createdAt: string;
